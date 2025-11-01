@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations des Parents</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .required {
+            color: red;
+        }
+        .btn-finaliser {
+            background-color: #181a39;
+        }
+    </style>
+</head>
+<body>
+    <h2>Informations des Parents</h2>
+    
+    <form action="/submit-complete" method="POST">
+        <!-- Informations du père -->
+        <div class="form-group">
+            <label for="nom_pere">Nom de ton père <span class="required">*</span></label>
+            <input type="text" id="nom_pere" name="nom_pere" required>
+        </div>
+
+        <div class="form-group">
+            <label for="prenom_pere">Prénom de ton père <span class="required">*</span></label>
+            <input type="text" id="prenom_pere" name="prenom_pere" required>
+        </div>
+
+        <!-- Informations de la mère -->
+        <div class="form-group">
+            <label for="nom_mere">Nom de ta mère <span class="required">*</span></label>
+            <input type="text" id="nom_mere" name="nom_mere" required>
+        </div>
+
+        <div class="form-group">
+            <label for="prenom_mere">Prénom de ta mère</label>
+            <input type="text" id="prenom_mere" name="prenom_mere">
+        </div>
+
+        <div class="form-group">
+            <label for="date_naissance_pere">Date de naissance de ton père</label>
+            <input type="date" id="date_naissance_pere" name="date_naissance_pere">
+        </div>
+
+        <div class="form-group">
+            <label for="metiere">La métier des parents</label>
+            <textarea id="metiere" name="metiere" rows="3" placeholder="Décrivez la profession des parents..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="CN">Télécharger CN (Carte Nationale) - PDF</label>
+            <input type="file" id="CN" name="CN" accept=".pdf">
+        </div>
+
+        <!-- Bouton de soumission final -->
+        <div class="form-group">
+            <button type="submit" class="btn-finaliser">Finaliser l'inscription</button>
+             <button type="reset" style="background-color: #f44336; margin-left: 10px;">
+                Réinitialiser
+            </button>
+        </div>
+    </form>
+
+    <script>
+        // Récupérer les paramètres de l'URL de la première page
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Afficher les données reçues (optionnel - pour debug)
+        console.log('Données reçues:', {
+            nom: urlParams.get('nom'),
+            prenom: urlParams.get('prenom'),
+            email: urlParams.get('email')
+        });
+    </script>
+</body>
+</html>

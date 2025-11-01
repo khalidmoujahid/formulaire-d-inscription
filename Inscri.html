@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .required {
+            color: red;
+        }
+        .btn-suivre {
+            background-color: #181a39 !important;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulaire d'inscription</h2>
+    
+    <form action="NICE.html" method="GET">
+        <!-- Informations personnelles -->
+        <div class="form-group">
+            <label for="nom">Nom <span class="required">*</span></label>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="prenom">Prénom <span class="required">*</span></label>
+            <input type="text" id="prenom" name="prenom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone">
+        </div>
+
+        <div class="form-group">
+            <label for="date_naissance">Date de naissance</label>
+            <input type="date" id="date_naissance" name="date_naissance">
+        </div>
+
+        <!-- Adresse -->
+        <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <textarea id="adresse" name="adresse" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville">
+        </div>
+
+        <div class="form-group">
+            <label for="code_postal">Code postal</label>
+            <input type="text" id="code_postal" name="code_postal" maxlength="5">
+        </div>
+
+        <!-- Sélections -->
+        <div class="form-group">
+            <label for="pays">Pays</label>
+            <select id="pays" name="pays">
+                <option value="">Sélectionnez un pays</option>
+                <option value="ch">Maroc</option>
+                <option value="fr">France</option>
+                <option value="be">Belgique</option>
+                <option value="ch">Suisse</option>
+                <option value="ca">Canada</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Genre</label>
+            <div>
+                <input type="radio" id="homme" name="genre" value="homme">
+                <label for="homme" style="display: inline;">Homme</label>
+                
+                <input type="radio" id="femme" name="genre" value="femme">
+                <label for="femme" style="display: inline;">Femme</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Centres d'intérêt</label>
+            <div>
+                <input type="checkbox" id="sport" name="interets" value="sport">
+                <label for="sport" style="display: inline;">Sport</label>
+                
+                <input type="checkbox" id="lecture" name="interets" value="lecture">
+                <label for="lecture" style="display: inline;">Lecture</label>
+                
+                <input type="checkbox" id="musique" name="interets" value="musique">
+                <label for="musique" style="display: inline;">Musique</label>
+                
+                <input type="checkbox" id="voyage" name="interets" value="voyage">
+                <label for="voyage" style="display: inline;">Voyage</label>
+            </div>
+        </div>
+
+        <!-- Fichier -->
+        <div class="form-group">
+            <label for="cv">Télécharger CV (PDF)</label>
+            <input type="file" id="cv" name="cv" accept=".pdf">
+        </div>
+
+        <!-- Boutons -->
+        <div class="form-group">
+            <button type="submit" class="btn-suivre">Suivre l'inscription</button>
+            <button type="reset" style="background-color: #f44336; margin-left: 10px;">
+                Réinitialiser
+            </button>
+        </div>
+    </form>
+</body>
+</html>
